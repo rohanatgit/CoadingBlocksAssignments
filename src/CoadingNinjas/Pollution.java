@@ -8,19 +8,28 @@ public class Pollution {
         int t=sc.nextInt();
         for(int i=0;i<t;i++){
             int n=sc.nextInt();
-            int s=0;
-            int p=0;
-            if(n%2!=0){
-                s+=n;
+            int ev=0;
+            int os=0;
+            while(n>0){
+                int rem=n%10;
+                if(rem%2==0){
+                    ev+=rem;
+                }
+                else{
+                     os+=rem;
+                }
+                n=n/10;
             }
-            else if(n%2==0){
-                p+=n;
+            if(os%3==0){
+                System.out.println("Yes");
             }
-            if(s/3==0){
-                System.out.print("No\n");
-            }
-            else if(p/4==0){
-                System.out.print("Yes");
+            else{
+                if(ev%4==0){
+                    System.out.println("Yes");
+                }
+                else{
+                    System.out.println("No");
+                }
             }
         }
 
